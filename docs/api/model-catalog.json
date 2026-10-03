@@ -1,0 +1,468 @@
+{
+  "date": "2026-09-08",
+  "notice": "Vendor-displayed model labels, slugs and prices. Actual model routing and generation not independently verified. Re-fetch before use.",
+  "models": [
+    {
+      "slug": "flux-schnell",
+      "name": "Flux Schnell",
+      "category": "image",
+      "credits": 1,
+      "description": "Black Forest Labs Flux Schnell — ultra-fast T2I via FAL"
+    },
+    {
+      "slug": "flux-dev",
+      "name": "Flux Dev",
+      "category": "image",
+      "credits": 4,
+      "description": "Black Forest Labs Flux Dev — high quality T2I via FAL"
+    },
+    {
+      "slug": "gpt-image-2-low-1024x1024",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 5,
+      "description": "OpenAI GPT Image 2 via fal.ai — Low quality, 1024 x 1024 output"
+    },
+    {
+      "slug": "gpt-image-2-low-1024x1536",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 5,
+      "description": "OpenAI GPT Image 2 via fal.ai — Low quality, 1024 x 1536 output"
+    },
+    {
+      "slug": "gpt-image-2-low-1024x768",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 5,
+      "description": "OpenAI GPT Image 2 via fal.ai — Low quality, 1024 x 768 output"
+    },
+    {
+      "slug": "imagen-standard",
+      "name": "Nano Banana Pro",
+      "category": "image",
+      "credits": 5,
+      "description": "High quality image generation with Gemini 3 Pro Image"
+    },
+    {
+      "slug": "nano-banana",
+      "name": "Nano Banana",
+      "category": "image",
+      "credits": 5,
+      "description": "Gemini 3.1 Flash Image via Google AI Studio"
+    },
+    {
+      "slug": "nano-banana-2",
+      "name": "Nano Banana 2",
+      "category": "image",
+      "credits": 5,
+      "description": "Gemini 3.1 Flash Image via Google AI Studio — upgraded Nano Banana"
+    },
+    {
+      "slug": "seedream",
+      "name": "Seedream 4.5",
+      "category": "image",
+      "credits": 5,
+      "description": "ByteDance Seedream 4.5 text-to-image via FAL"
+    },
+    {
+      "slug": "imagen-ultra",
+      "name": "Image Ultra",
+      "category": "image",
+      "credits": 6,
+      "description": "Highest quality image generation with Nano Banana Pro (Gemini 3 Pro Image)"
+    },
+    {
+      "slug": "gpt-image-2-medium-1024x1536",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 8,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 1024 x 1536 output"
+    },
+    {
+      "slug": "gpt-image-2-medium-1024x768",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 8,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 1024 x 768 output"
+    },
+    {
+      "slug": "gpt-image-2-medium-1920x1080",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 8,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 1920 x 1080 output"
+    },
+    {
+      "slug": "flux-piapi",
+      "name": "Flux Pro",
+      "category": "image",
+      "credits": 10,
+      "description": "Black Forest Labs Flux Pro — image generation via PiAPI"
+    },
+    {
+      "slug": "gpt-image-2-medium-1024x1024",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 10,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 1024 x 1024 output"
+    },
+    {
+      "slug": "gpt-image-2-medium-2560x1440",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 10,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 2560 x 1440 output"
+    },
+    {
+      "slug": "vertex-imagen",
+      "name": "Imagen",
+      "category": "image",
+      "credits": 10,
+      "description": "Google Imagen via Vertex — photorealistic image generation"
+    },
+    {
+      "slug": "gpt-image-2-medium-3840x2160",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 15,
+      "description": "OpenAI GPT Image 2 via fal.ai — Medium quality, 3840 x 2160 output"
+    },
+    {
+      "slug": "grok-imagine-image",
+      "name": "Grok Imagine Image",
+      "category": "image",
+      "credits": 15,
+      "description": "xAI Grok Imagine image via fal.ai — high-quality text-to-image with an image-edit mode."
+    },
+    {
+      "slug": "cinema-asset-sheet",
+      "name": "Cinema Asset Sheet",
+      "category": "image",
+      "credits": 20,
+      "description": "Cinema Studio: 3-angle character/location reference sheet (front, three-quarter, profile) generated with GPT Image 2 from a director-written prompt, optionally locked to user-provided photos."
+    },
+    {
+      "slug": "mood-board-creator",
+      "name": "Mood Board Creator",
+      "category": "image",
+      "credits": 20,
+      "description": "Turn several photos of a character into one multi-angle reference sheet, then send it straight into a video as a reference."
+    },
+    {
+      "slug": "gpt-image-2-high-1024x768",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 25,
+      "description": "OpenAI GPT Image 2 via fal.ai — High quality, 1024 x 768 output"
+    },
+    {
+      "slug": "gpt-image-2-high-1920x1080",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 25,
+      "description": "OpenAI GPT Image 2 via fal.ai — High quality, 1920 x 1080 output"
+    },
+    {
+      "slug": "gpt-image-2",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 30,
+      "description": "OpenAI GPT Image 2 via fal.ai — high-detail text-to-image and image editing"
+    },
+    {
+      "slug": "gpt-image-2-high-1024x1536",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 30,
+      "description": "OpenAI GPT Image 2 via fal.ai — High quality, 1024 x 1536 output"
+    },
+    {
+      "slug": "gpt-image-2-high-2560x1440",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 30,
+      "description": "OpenAI GPT Image 2 via fal.ai — High quality, 2560 x 1440 output"
+    },
+    {
+      "slug": "gpt-image-2-high-3840x2160",
+      "name": "GPT Image 2",
+      "category": "image",
+      "credits": 50,
+      "description": "OpenAI GPT Image 2 via fal.ai — High quality, 3840 x 2160 output"
+    },
+    {
+      "slug": "lipsync-sync",
+      "name": "Lip-Sync",
+      "category": "video",
+      "credits": 16,
+      "description": "Lip-sync any voice onto any face video. Powered by fal-ai/sync-1.6.0. Upload a source video and a voice clip; the model re-renders the speaker's mouth to match the audio."
+    },
+    {
+      "slug": "luma-ray2-flash",
+      "name": "Luma Ray2 Flash",
+      "category": "video",
+      "credits": 27,
+      "description": "Luma Ray2 Flash via fal.ai — fast realistic text-to-video with natural motion."
+    },
+    {
+      "slug": "hailuo-3-max-turbo",
+      "name": "MiniMax H3 Max Turbo",
+      "category": "video",
+      "credits": 35,
+      "description": "MiniMax H3 Max Turbo via fal.ai — the throughput-tuned H3 Max. Text-to-video, image-to-video and Start→End keyframes, 5-15s, up to 768P native (1080p upscaled)."
+    },
+    {
+      "slug": "seedance-2-0-mini",
+      "name": "Seedance 2.0 Mini",
+      "category": "video",
+      "credits": 50,
+      "description": "ByteDance Seedance 2.0 Mini via OpenRouter — fast video with native generated audio, first/last frame control and multimodal image/video/audio references."
+    },
+    {
+      "slug": "hailuo-piapi",
+      "name": "MiniMax Hailuo",
+      "category": "video",
+      "credits": 54,
+      "description": "MiniMax Hailuo 2.3 — fast, expressive video via PiAPI"
+    },
+    {
+      "slug": "wan-3-0",
+      "name": "Wan 3.0",
+      "category": "video",
+      "credits": 62,
+      "description": "Alibaba Wan 3.0 via OpenRouter — video with native generated audio, first/last frame control and multimodal image/video/audio references. 480p–1080p, 5–30s."
+    },
+    {
+      "slug": "hailuo-3-max",
+      "name": "MiniMax H3 Max",
+      "category": "video",
+      "credits": 65,
+      "description": "MiniMax H3 Max (Hailuo 03) via fal.ai — sharper prompt adherence and aesthetics. Text-to-video, image-to-video and Start→End keyframes, 5-15s, up to 768P native (1080p upscaled)."
+    },
+    {
+      "slug": "seedance-piapi-fast",
+      "name": "Seedance 2 Fast",
+      "category": "video",
+      "credits": 75,
+      "description": "ByteDance Seedance 2 via PiAPI — fastest model, 480p output"
+    },
+    {
+      "slug": "grok-imagine-video",
+      "name": "Grok Imagine Video",
+      "category": "video",
+      "credits": 78,
+      "description": "xAI Grok Imagine video via fal.ai — text/image-to-video plus extend & edit reference modes."
+    },
+    {
+      "slug": "ltx-video",
+      "name": "LTX Video",
+      "category": "video",
+      "credits": 97,
+      "description": "Lightricks LTX Video — fast video with camera controls"
+    },
+    {
+      "slug": "seedance-1-5-pro",
+      "name": "Seedance 1.5 Pro",
+      "category": "video",
+      "credits": 100,
+      "description": "ByteDance Seedance 1.5 Pro via fal.ai — premium cinematic text/image-to-video with native audio."
+    },
+    {
+      "slug": "seedance-piapi",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 100,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 480p output"
+    },
+    {
+      "slug": "vertex-veo-lite",
+      "name": "Veo 3.1 Lite",
+      "category": "video",
+      "credits": 100,
+      "description": "Google Veo 3.1 Lite — the lightweight Veo tier. Native 1080p, 4/6/8s, 16:9 or 9:16, with 1440p/2560p delivered via Topaz post-upscale."
+    },
+    {
+      "slug": "seedance-2-0-mini-720p",
+      "name": "Seedance 2.0 Mini (720p)",
+      "category": "video",
+      "credits": 110,
+      "description": "Seedance 2.0 Mini at 720p."
+    },
+    {
+      "slug": "pixverse-v6",
+      "name": "PixVerse V6",
+      "category": "video",
+      "credits": 113,
+      "description": "PixVerse V6 text-to-video (FAL)"
+    },
+    {
+      "slug": "wan-3-0-720p",
+      "name": "Wan 3.0 (720p)",
+      "category": "video",
+      "credits": 123,
+      "description": "Wan 3.0 at 720p."
+    },
+    {
+      "slug": "seedance-piapi-fast-720p",
+      "name": "Seedance 2 Fast",
+      "category": "video",
+      "credits": 150,
+      "description": "ByteDance Seedance 2 via PiAPI — fastest model, 720p output"
+    },
+    {
+      "slug": "story-video",
+      "name": "Story Video",
+      "category": "video",
+      "credits": 160,
+      "description": "Multi-scene cinematic video with ElevenLabs narration and Veo 3.1 Fast"
+    },
+    {
+      "slug": "vertex-veo-fast",
+      "name": "Veo 3.1 Fast",
+      "category": "video",
+      "credits": 160,
+      "description": "Fast video generation with VEO 3.1 Fast model"
+    },
+    {
+      "slug": "vertex-veo",
+      "name": "Veo 3.1",
+      "category": "video",
+      "credits": 188,
+      "description": "Google Veo 3.1 — premium quality with audio support"
+    },
+    {
+      "slug": "seedance-2-5-piapi",
+      "name": "Seedance 2.5",
+      "category": "video",
+      "credits": 200,
+      "description": "ByteDance Seedance 2.5 via PiAPI — the newest Seedance line with native audio, first/last frame control and omni references."
+    },
+    {
+      "slug": "seedance-piapi-720p",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 200,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 720p output"
+    },
+    {
+      "slug": "wan-3-0-1080p",
+      "name": "Wan 3.0 (1080p)",
+      "category": "video",
+      "credits": 246,
+      "description": "Wan 3.0 at 1080p (native)."
+    },
+    {
+      "slug": "seedance-2-5-piapi-720p",
+      "name": "Seedance 2.5 (720p)",
+      "category": "video",
+      "credits": 250,
+      "description": "Seedance 2.5 at 720p — the default rung."
+    },
+    {
+      "slug": "seedance-piapi-fast-1440p",
+      "name": "Seedance 2 Fast",
+      "category": "video",
+      "credits": 250,
+      "description": "ByteDance Seedance 2 via PiAPI — fastest model, 1440p+ output (Topaz upscale)"
+    },
+    {
+      "slug": "kling-3",
+      "name": "Kling 3.0",
+      "category": "video",
+      "credits": 298,
+      "description": "Kuaishou Kling 3.0 via PiAPI (FAL fallback) — next-gen video with native audio, up to 15s."
+    },
+    {
+      "slug": "seedance-2-5-piapi-1080p",
+      "name": "Seedance 2.5 (1080p)",
+      "category": "video",
+      "credits": 300,
+      "description": "Seedance 2.5 at 1080p — 720p render + Topaz upscale."
+    },
+    {
+      "slug": "seedance-piapi-fast-2560p",
+      "name": "Seedance 2 Fast",
+      "category": "video",
+      "credits": 300,
+      "description": "ByteDance Seedance 2 via PiAPI — fastest model, 2560p output (Topaz upscale)"
+    },
+    {
+      "slug": "kling-video",
+      "name": "Kling 2.6",
+      "category": "video",
+      "credits": 338,
+      "description": "Kuaishou Kling 2.6 via PiAPI (FAL fallback) — next-gen video with native audio."
+    },
+    {
+      "slug": "kling-3-omni",
+      "name": "Kling 3.0 Omni",
+      "category": "video",
+      "credits": 339,
+      "description": "Kling 3.0 Omni via PiAPI (FAL fallback) — multi-modal: drive generation with up to 4 reference images (@image_N in the prompt) and a reference video (@video). Native audio, up to 15s."
+    },
+    {
+      "slug": "deerflow-omnireels",
+      "name": "OmniReels",
+      "category": "video",
+      "credits": 350,
+      "description": "Short-form social video orchestration (OmniReels)"
+    },
+    {
+      "slug": "seedance-piapi-1080p",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 350,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 1080p output"
+    },
+    {
+      "slug": "seedance-piapi-fast-4k",
+      "name": "Seedance 2 Fast",
+      "category": "video",
+      "credits": 350,
+      "description": "ByteDance Seedance 2 via PiAPI — fastest model, 4k output (Topaz upscale)"
+    },
+    {
+      "slug": "seedance-2-5-piapi-1440p",
+      "name": "Seedance 2.5 (1440p)",
+      "category": "video",
+      "credits": 400,
+      "description": "Seedance 2.5 at 1440p — 720p render + Topaz upscale."
+    },
+    {
+      "slug": "seedance-piapi-1440p",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 400,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 1440p+ output (Topaz upscale)"
+    },
+    {
+      "slug": "seedance-piapi-2560p",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 450,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 2560p output (Topaz upscale)"
+    },
+    {
+      "slug": "seedance-2-5-piapi-2560p",
+      "name": "Seedance 2.5 (2560p)",
+      "category": "video",
+      "credits": 500,
+      "description": "Seedance 2.5 at 2560p — 720p render + Topaz upscale."
+    },
+    {
+      "slug": "seedance-piapi-4k",
+      "name": "Seedance 2",
+      "category": "video",
+      "credits": 500,
+      "description": "ByteDance Seedance 2 via PiAPI — recommended model, 4k output (Topaz upscale)"
+    },
+    {
+      "slug": "seedance-2-5-piapi-4k",
+      "name": "Seedance 2.5 (4k)",
+      "category": "video",
+      "credits": 600,
+      "description": "Seedance 2.5 at 4k — 720p render + Topaz upscale."
+    }
+  ]
+}

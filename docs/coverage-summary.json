@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-08",
+  "module_runbooks": 42,
+  "captured_screen_states": 95,
+  "help_guides_opened": 53,
+  "source_call_sites": 833,
+  "distinct_source_call_expressions": 697,
+  "normalized_call_templates": 662,
+  "observed_network_method_url_status_combinations": 145,
+  "direct_read_checks": 26,
+  "successful_direct_reads": 25,
+  "openapi_documented_paths": 28,
+  "model_catalog_entries": 66,
+  "industry_groups": 9,
+  "service_presets": 43
+}

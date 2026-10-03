@@ -1,0 +1,2604 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Veluro observed API subset — independent research",
+    "version": "2026-09-08",
+    "description": "Not vendor-issued. Inferred schemas describe observed responses and the tested safe local-draft workflow. No exhaustive server-validation or production support contract is claimed."
+  },
+  "servers": [
+    {
+      "url": "https://veluro.ai/api"
+    }
+  ],
+  "security": [
+    {
+      "sessionBearer": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "sessionBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Observed app session token; expiry/scopes not established."
+      }
+    }
+  },
+  "paths": {
+    "/auth/me": {
+      "get": {
+        "summary": "Observed GET /auth/me",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "picture": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "has_onboarded": {
+                      "type": "boolean"
+                    },
+                    "plan_level": {
+                      "type": "string"
+                    },
+                    "subscription_status": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "is_referral_partner": {
+                      "type": "boolean"
+                    },
+                    "demo_account": {
+                      "type": "boolean"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "agent_upgrade_seen": {
+                      "type": "boolean"
+                    },
+                    "onboarding_v2": {
+                      "description": "Observed null; non-null type not established."
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/credits": {
+      "get": {
+        "summary": "Observed GET /credits",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "plan_bank": {
+                      "type": "integer"
+                    },
+                    "purchased_bank": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "monthly_allowance": {
+                      "type": "integer"
+                    },
+                    "used_this_cycle": {
+                      "type": "integer"
+                    },
+                    "rollover_cap": {
+                      "type": "integer"
+                    },
+                    "renews_on": {
+                      "type": "string"
+                    },
+                    "unlimited": {
+                      "type": "boolean"
+                    },
+                    "packs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "credits": {
+                            "type": "integer"
+                          },
+                          "usd": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usage/quota": {
+      "get": {
+        "summary": "Observed GET /usage/quota",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "plan_level": {
+                      "type": "string"
+                    },
+                    "unlimited": {
+                      "type": "boolean"
+                    },
+                    "limits": {
+                      "type": "object",
+                      "properties": {
+                        "campaigns": {
+                          "type": "integer"
+                        },
+                        "videos_standard": {
+                          "type": "integer"
+                        },
+                        "videos_premium": {
+                          "type": "integer"
+                        },
+                        "images": {
+                          "type": "integer"
+                        },
+                        "leads": {
+                          "type": "integer"
+                        },
+                        "landing_pages": {
+                          "type": "integer"
+                        },
+                        "social_pages": {
+                          "type": "integer"
+                        },
+                        "coach_seats": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "videos_standard_used": {
+                      "type": "integer"
+                    },
+                    "videos_premium_used": {
+                      "type": "integer"
+                    },
+                    "images_used": {
+                      "type": "integer"
+                    },
+                    "active_campaigns": {
+                      "type": "integer"
+                    },
+                    "leads_used": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/billing/plan": {
+      "get": {
+        "summary": "Observed GET /billing/plan",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "plan_level": {
+                      "type": "string"
+                    },
+                    "plan_updated_at": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "subscription_status": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "trial_ends_at": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "has_billing": {
+                      "type": "boolean"
+                    },
+                    "cancel_at_period_end": {
+                      "type": "boolean"
+                    },
+                    "plan_ends_at": {
+                      "description": "Observed null; non-null type not established."
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/platform/flags": {
+      "get": {
+        "summary": "Observed GET /platform/flags",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "intent_provider_issue": {
+                      "description": "Observed null; non-null type not established."
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ads/connections": {
+      "get": {
+        "summary": "Observed GET /ads/connections",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "boolean"
+                    },
+                    "google": {
+                      "type": "boolean"
+                    },
+                    "linkedin": {
+                      "type": "boolean"
+                    },
+                    "tiktok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ads/stats": {
+      "get": {
+        "summary": "Observed GET /ads/stats",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total_campaigns": {
+                      "type": "integer"
+                    },
+                    "active_campaigns": {
+                      "type": "integer"
+                    },
+                    "total_spend": {
+                      "type": "integer"
+                    },
+                    "total_clicks": {
+                      "type": "integer"
+                    },
+                    "total_conversions": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ads/readiness-summary": {
+      "get": {
+        "summary": "Observed GET /ads/readiness-summary",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intent/status": {
+      "get": {
+        "summary": "Observed GET /intent/status",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "connected": {
+                      "type": "boolean"
+                    },
+                    "audience_count": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intent/provider-status": {
+      "get": {
+        "summary": "Observed GET /intent/provider-status",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "issue": {
+                      "description": "Observed null; non-null type not established."
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intent/quota": {
+      "get": {
+        "summary": "Observed GET /intent/quota",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "plan": {
+                      "type": "string"
+                    },
+                    "cap": {
+                      "type": "integer"
+                    },
+                    "used": {
+                      "type": "integer"
+                    },
+                    "remaining": {
+                      "type": "integer"
+                    },
+                    "unlimited": {
+                      "type": "boolean"
+                    },
+                    "pending_release": {
+                      "type": "integer"
+                    },
+                    "reset_date": {
+                      "type": "string"
+                    },
+                    "reset_label": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/landing/quota": {
+      "get": {
+        "summary": "Observed GET /landing/quota",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "used": {
+                      "type": "integer"
+                    },
+                    "cap": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integrations": {
+      "get": {
+        "summary": "Observed GET /integrations",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sendgrid": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "twilio": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "google_calendar": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "google_analytics": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "gohighlevel": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "meta_ads": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "google_ads": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "linkedin_ads": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "bank_account": {
+                      "type": "object",
+                      "properties": {
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected_at": {
+                          "description": "Observed null; non-null type not established."
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/outreach/connection": {
+      "get": {
+        "summary": "Observed GET /outreach/connection",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "connected": {
+                      "type": "boolean"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/outreach/mailboxes": {
+      "get": {
+        "summary": "Observed GET /outreach/mailboxes",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mailboxes": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "used": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "unlimited": {
+                      "type": "boolean"
+                    },
+                    "plan_level": {
+                      "type": "string"
+                    },
+                    "max_daily_cap": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health-score": {
+      "get": {
+        "summary": "Observed GET /health-score",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "overall_score": {
+                      "type": "integer"
+                    },
+                    "trend": {
+                      "type": "number"
+                    },
+                    "scores": {
+                      "type": "object",
+                      "properties": {
+                        "demand": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "number"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "leads_this_month": {
+                                  "type": "integer"
+                                },
+                                "traffic_sessions": {
+                                  "type": "integer"
+                                },
+                                "cost_per_lead": {
+                                  "type": "number"
+                                },
+                                "top_channel": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "conversion": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "number"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "funnel_rate": {
+                                  "type": "number"
+                                },
+                                "lead_to_sale": {
+                                  "type": "integer"
+                                },
+                                "sales_velocity_days": {
+                                  "type": "integer"
+                                },
+                                "avg_response_time_hrs": {
+                                  "type": "number"
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "efficiency": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "number"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "cac": {
+                                  "type": "number"
+                                },
+                                "roas": {
+                                  "type": "number"
+                                },
+                                "funnel_dropoff_pct": {
+                                  "type": "number"
+                                },
+                                "cost_efficiency_ratio": {
+                                  "type": "number"
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "retention": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "number"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "repeat_rate_pct": {
+                                  "type": "number"
+                                },
+                                "churn_rate_pct": {
+                                  "type": "number"
+                                },
+                                "ltv": {
+                                  "type": "integer"
+                                },
+                                "engagement_score": {
+                                  "type": "integer"
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "financial": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "integer"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "monthly_revenue": {
+                                  "type": "integer"
+                                },
+                                "profit_margin_pct": {
+                                  "type": "number"
+                                },
+                                "burn_rate": {
+                                  "type": "integer"
+                                },
+                                "cash_runway_days": {
+                                  "type": "integer"
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "reputation": {
+                          "type": "object",
+                          "properties": {
+                            "score": {
+                              "type": "integer"
+                            },
+                            "trend": {
+                              "type": "integer"
+                            },
+                            "needs_setup": {
+                              "type": "boolean"
+                            },
+                            "details": {
+                              "type": "object",
+                              "properties": {
+                                "avg_rating": {
+                                  "description": "Observed null; non-null type not established."
+                                },
+                                "total_reviews": {
+                                  "type": "integer"
+                                },
+                                "platforms_tracked": {
+                                  "type": "integer"
+                                },
+                                "last_scanned": {
+                                  "description": "Observed null; non-null type not established."
+                                }
+                              },
+                              "additionalProperties": true
+                            }
+                          },
+                          "additionalProperties": true
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "Account data provenance conflict. Do not use returned figures to make business decisions until independently reconciled."
+      }
+    },
+    "/health-insights": {
+      "get": {
+        "summary": "Observed GET /health-insights",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "severity": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "body": {
+                        "type": "string"
+                      },
+                      "timestamp": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "insight_id": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Account data provenance conflict. Do not use returned figures to make business decisions until independently reconciled."
+      }
+    },
+    "/health-actions": {
+      "get": {
+        "summary": "Observed GET /health-actions",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "action_id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "agent": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "impact": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Account data provenance conflict. Do not use returned figures to make business decisions until independently reconciled."
+      }
+    },
+    "/service-brain/catalog": {
+      "get": {
+        "summary": "Observed GET /service-brain/catalog",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "catalog": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "industry": {
+                            "type": "string"
+                          },
+                          "services": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/omnirogue/models": {
+      "get": {
+        "summary": "Observed GET /omnirogue/models",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "models": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "slug": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "category": {
+                            "type": "string"
+                          },
+                          "credits": {
+                            "type": "integer"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    },
+                    "mock": {
+                      "type": "boolean"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/omnirogue/usage": {
+      "get": {
+        "summary": "Observed GET /omnirogue/usage",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "plan": {
+                      "type": "string"
+                    },
+                    "allowance": {
+                      "type": "integer"
+                    },
+                    "used": {
+                      "type": "integer"
+                    },
+                    "extra_credits": {
+                      "type": "integer"
+                    },
+                    "remaining": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sales-coach/usage": {
+      "get": {
+        "summary": "Observed GET /sales-coach/usage",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "month": {
+                      "type": "string"
+                    },
+                    "plan": {
+                      "type": "string"
+                    },
+                    "renews_on": {
+                      "type": "string"
+                    },
+                    "calls_used": {
+                      "type": "integer"
+                    },
+                    "minutes_used": {
+                      "type": "integer"
+                    },
+                    "calls_cap": {
+                      "type": "integer"
+                    },
+                    "minutes_cap": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sales-coach/playbooks": {
+      "get": {
+        "summary": "Observed GET /sales-coach/playbooks",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "playbooks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    },
+                    "auto_detected": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intent/topics/search": {
+      "get": {
+        "summary": "Observed GET /intent/topics/search",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "b2b": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "b2c": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "topic_id": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "topic": {
+                            "type": "string"
+                          },
+                          "category": {
+                            "type": "string"
+                          },
+                          "sub_category": {
+                            "type": "string"
+                          },
+                          "match_score": {
+                            "type": "number"
+                          },
+                          "match_method": {
+                            "type": "string"
+                          },
+                          "keyword_rank_score": {
+                            "type": "integer"
+                          },
+                          "person_count": {
+                            "description": "Observed null; non-null type not established."
+                          },
+                          "person_count_window_days": {
+                            "description": "Observed null; non-null type not established."
+                          },
+                          "person_count_as_of": {
+                            "description": "Observed null; non-null type not established."
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "roofing"
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "b2c"
+          }
+        ]
+      }
+    },
+    "/intent/city-search": {
+      "get": {
+        "summary": "Observed GET /intent/city-search",
+        "x-evidence-level": "tested read",
+        "responses": {
+          "200": {
+            "description": "Observed JSON response; data truth and completeness are not implied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "city": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Austin"
+          }
+        ]
+      }
+    },
+    "/ads/campaigns": {
+      "post": {
+        "summary": "Tested local draft creation",
+        "x-evidence-level": "tested reversible draft",
+        "description": "Documented example is draft only, auto_optimize false, no provider account or external launch. Read back status after execution. Required backend fields are not comprehensively established.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "platform": {
+                    "type": "string"
+                  },
+                  "page_id": {
+                    "description": "Observed null; non-null type not established."
+                  },
+                  "ad_account_id": {
+                    "description": "Observed null; non-null type not established."
+                  },
+                  "campaign_name": {
+                    "type": "string"
+                  },
+                  "campaign_type": {
+                    "type": "string"
+                  },
+                  "lead_method": {
+                    "type": "string"
+                  },
+                  "destination_url": {
+                    "description": "Observed null; non-null type not established."
+                  },
+                  "audience": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "selected": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "names": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "geo_locations": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "region": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "budget_monthly": {
+                    "type": "integer"
+                  },
+                  "budget_daily": {
+                    "type": "integer"
+                  },
+                  "optimization_rules": {
+                    "type": "object",
+                    "properties": {
+                      "auto": {
+                        "type": "boolean"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "auto_optimize": {
+                    "type": "boolean"
+                  },
+                  "ad_copy": {
+                    "type": "string"
+                  },
+                  "ad_copy_details": {
+                    "type": "object",
+                    "properties": {
+                      "primary_text": {
+                        "type": "string"
+                      },
+                      "headline": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "cta": {
+                        "type": "string"
+                      },
+                      "primary_texts": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "headlines": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "descriptions": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "creative_assets": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "creative_urls": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "pixel_id": {
+                    "description": "Observed null; non-null type not established."
+                  },
+                  "nurture_sequence_id": {
+                    "description": "Observed null; non-null type not established."
+                  },
+                  "keywords_exact": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "keywords_phrase": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "negative_keywords": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "lead_form": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "intro_title": {
+                        "type": "string"
+                      },
+                      "intro_body": {
+                        "type": "string"
+                      },
+                      "intro_image_url": {
+                        "type": "string"
+                      },
+                      "privacy_policy_url": {
+                        "type": "string"
+                      },
+                      "privacy_link_text": {
+                        "type": "string"
+                      },
+                      "thank_you_title": {
+                        "type": "string"
+                      },
+                      "thank_you_body": {
+                        "type": "string"
+                      },
+                      "thank_you_button_text": {
+                        "type": "string"
+                      },
+                      "thank_you_url": {
+                        "type": "string"
+                      },
+                      "questions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true
+                        }
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "platform": "meta",
+                "page_id": null,
+                "ad_account_id": null,
+                "campaign_name": "Documentation example — draft only",
+                "campaign_type": "leads",
+                "lead_method": "lead_form",
+                "destination_url": null,
+                "audience": {
+                  "mode": "ai",
+                  "selected": [],
+                  "names": [],
+                  "geo_locations": [],
+                  "region": ""
+                },
+                "budget_monthly": 30,
+                "budget_daily": 1,
+                "optimization_rules": {
+                  "auto": false
+                },
+                "auto_optimize": false,
+                "ad_copy": "",
+                "ad_copy_details": {
+                  "primary_text": "",
+                  "headline": "",
+                  "description": "",
+                  "cta": "LEARN_MORE",
+                  "primary_texts": [],
+                  "headlines": [],
+                  "descriptions": []
+                },
+                "creative_assets": [],
+                "creative_urls": [],
+                "pixel_id": null,
+                "nurture_sequence_id": null,
+                "keywords_exact": [],
+                "keywords_phrase": [],
+                "negative_keywords": [],
+                "lead_form": {
+                  "name": "Documentation example — draft only — Lead Form",
+                  "intro_title": "",
+                  "intro_body": "",
+                  "intro_image_url": "",
+                  "privacy_policy_url": "",
+                  "privacy_link_text": "",
+                  "thank_you_title": "",
+                  "thank_you_body": "",
+                  "thank_you_button_text": "",
+                  "thank_you_url": "",
+                  "questions": [
+                    {
+                      "type": "FULL_NAME"
+                    },
+                    {
+                      "type": "EMAIL"
+                    }
+                  ]
+                },
+                "status": "draft"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Observed successful draft response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "campaign_id": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "platform": {
+                      "type": "string"
+                    },
+                    "campaign_name": {
+                      "type": "string"
+                    },
+                    "campaign_type": {
+                      "type": "string"
+                    },
+                    "objective": {
+                      "type": "string"
+                    },
+                    "lead_method": {
+                      "type": "string"
+                    },
+                    "destination_url": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "audience": {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string"
+                        },
+                        "selected": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "names": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "geo_locations": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "region": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "budget_monthly": {
+                      "type": "integer"
+                    },
+                    "budget_daily": {
+                      "type": "integer"
+                    },
+                    "optimization_rules": {
+                      "type": "object",
+                      "properties": {
+                        "auto": {
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "auto_optimize": {
+                      "type": "boolean"
+                    },
+                    "creative_urls": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "creative_assets": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "ad_copy": {
+                      "type": "object",
+                      "properties": {
+                        "primary_text": {
+                          "type": "string"
+                        },
+                        "headline": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "cta": {
+                          "type": "string"
+                        },
+                        "primary_texts": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "headlines": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "descriptions": {
+                          "type": "array",
+                          "items": {}
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "pixel_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "nurture_sequence_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "lead_form": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "intro_title": {
+                          "type": "string"
+                        },
+                        "intro_body": {
+                          "type": "string"
+                        },
+                        "intro_image_url": {
+                          "type": "string"
+                        },
+                        "privacy_policy_url": {
+                          "type": "string"
+                        },
+                        "privacy_link_text": {
+                          "type": "string"
+                        },
+                        "thank_you_title": {
+                          "type": "string"
+                        },
+                        "thank_you_body": {
+                          "type": "string"
+                        },
+                        "thank_you_button_text": {
+                          "type": "string"
+                        },
+                        "thank_you_url": {
+                          "type": "string"
+                        },
+                        "questions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": true
+                          }
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "ad_account_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "keywords_exact": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "keywords_phrase": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "negative_keywords": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "metrics": {
+                      "type": "object",
+                      "properties": {
+                        "impressions": {
+                          "type": "integer"
+                        },
+                        "clicks": {
+                          "type": "integer"
+                        },
+                        "conversions": {
+                          "type": "integer"
+                        },
+                        "spend": {
+                          "type": "integer"
+                        },
+                        "cpc": {
+                          "type": "integer"
+                        },
+                        "ctr": {
+                          "type": "integer"
+                        },
+                        "roas": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ads/campaigns/{campaign_id}": {
+      "put": {
+        "summary": "Tested name-only partial update of a local draft",
+        "x-evidence-level": "tested reversible draft",
+        "description": "A name-only PUT preserved nonempty structured ad_copy. Replaying the full create body changed ad_copy from object to string; avoid that pattern. Other nested updates remain unverified. Read back all material fields.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "campaign_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "campaign_name"
+                ],
+                "additionalProperties": false
+              },
+              "example": {
+                "campaign_name": "Approved client campaign name"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Observed successful draft response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "campaign_id": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "platform": {
+                      "type": "string"
+                    },
+                    "campaign_name": {
+                      "type": "string"
+                    },
+                    "campaign_type": {
+                      "type": "string"
+                    },
+                    "objective": {
+                      "type": "string"
+                    },
+                    "lead_method": {
+                      "type": "string"
+                    },
+                    "destination_url": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "audience": {
+                      "type": "object",
+                      "properties": {},
+                      "additionalProperties": true
+                    },
+                    "budget_monthly": {
+                      "type": "integer"
+                    },
+                    "budget_daily": {
+                      "type": "integer"
+                    },
+                    "optimization_rules": {
+                      "type": "object",
+                      "properties": {
+                        "auto": {
+                          "type": "boolean"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "auto_optimize": {
+                      "type": "boolean"
+                    },
+                    "creative_urls": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "creative_assets": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "ad_copy": {
+                      "type": "object",
+                      "properties": {
+                        "primary_text": {
+                          "type": "string"
+                        },
+                        "headline": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "cta": {
+                          "type": "string"
+                        },
+                        "primary_texts": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "headlines": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "descriptions": {
+                          "type": "array",
+                          "items": {}
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "pixel_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "nurture_sequence_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "lead_form": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "ad_account_id": {
+                      "description": "Observed null; non-null type not established."
+                    },
+                    "keywords_exact": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "keywords_phrase": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "negative_keywords": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "metrics": {
+                      "type": "object",
+                      "properties": {
+                        "impressions": {
+                          "type": "integer"
+                        },
+                        "clicks": {
+                          "type": "integer"
+                        },
+                        "conversions": {
+                          "type": "integer"
+                        },
+                        "spend": {
+                          "type": "integer"
+                        },
+                        "cpc": {
+                          "type": "integer"
+                        },
+                        "ctr": {
+                          "type": "integer"
+                        },
+                        "roas": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "campaign_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "get": {
+        "summary": "Read campaign",
+        "x-evidence-level": "tested",
+        "parameters": [
+          {
+            "name": "campaign_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed campaign response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "campaign_id": {
+                          "type": "string"
+                        },
+                        "user_id": {
+                          "type": "string"
+                        },
+                        "platform": {
+                          "type": "string"
+                        },
+                        "campaign_name": {
+                          "type": "string"
+                        },
+                        "campaign_type": {
+                          "type": "string"
+                        },
+                        "objective": {
+                          "type": "string"
+                        },
+                        "lead_method": {
+                          "type": "string"
+                        },
+                        "destination_url": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "audience": {
+                          "type": "object",
+                          "properties": {
+                            "mode": {
+                              "type": "string"
+                            },
+                            "selected": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "names": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "geo_locations": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "region": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "budget_monthly": {
+                          "type": "integer"
+                        },
+                        "budget_daily": {
+                          "type": "integer"
+                        },
+                        "optimization_rules": {
+                          "type": "object",
+                          "properties": {
+                            "auto": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "auto_optimize": {
+                          "type": "boolean"
+                        },
+                        "creative_urls": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "creative_assets": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "ad_copy": {
+                          "type": "object",
+                          "properties": {
+                            "primary_text": {
+                              "type": "string"
+                            },
+                            "headline": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "cta": {
+                              "type": "string"
+                            },
+                            "primary_texts": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "headlines": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "descriptions": {
+                              "type": "array",
+                              "items": {}
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "pixel_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "nurture_sequence_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "lead_form": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "intro_title": {
+                              "type": "string"
+                            },
+                            "intro_body": {
+                              "type": "string"
+                            },
+                            "intro_image_url": {
+                              "type": "string"
+                            },
+                            "privacy_policy_url": {
+                              "type": "string"
+                            },
+                            "privacy_link_text": {
+                              "type": "string"
+                            },
+                            "thank_you_title": {
+                              "type": "string"
+                            },
+                            "thank_you_body": {
+                              "type": "string"
+                            },
+                            "thank_you_button_text": {
+                              "type": "string"
+                            },
+                            "thank_you_url": {
+                              "type": "string"
+                            },
+                            "questions": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": true
+                              }
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "ad_account_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "keywords_exact": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "keywords_phrase": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "negative_keywords": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "metrics": {
+                          "type": "object",
+                          "properties": {
+                            "impressions": {
+                              "type": "integer"
+                            },
+                            "clicks": {
+                              "type": "integer"
+                            },
+                            "conversions": {
+                              "type": "integer"
+                            },
+                            "spend": {
+                              "type": "integer"
+                            },
+                            "cpc": {
+                              "type": "integer"
+                            },
+                            "ctr": {
+                              "type": "integer"
+                            },
+                            "roas": {
+                              "type": "integer"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "created_at": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "campaign_id": {
+                          "type": "string"
+                        },
+                        "user_id": {
+                          "type": "string"
+                        },
+                        "platform": {
+                          "type": "string"
+                        },
+                        "campaign_name": {
+                          "type": "string"
+                        },
+                        "campaign_type": {
+                          "type": "string"
+                        },
+                        "objective": {
+                          "type": "string"
+                        },
+                        "lead_method": {
+                          "type": "string"
+                        },
+                        "destination_url": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "audience": {
+                          "type": "object",
+                          "properties": {
+                            "mode": {
+                              "type": "string"
+                            },
+                            "selected": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "names": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "geo_locations": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "region": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "budget_monthly": {
+                          "type": "integer"
+                        },
+                        "budget_daily": {
+                          "type": "integer"
+                        },
+                        "optimization_rules": {
+                          "type": "object",
+                          "properties": {
+                            "auto": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "auto_optimize": {
+                          "type": "boolean"
+                        },
+                        "creative_urls": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "creative_assets": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "ad_copy": {
+                          "type": "string"
+                        },
+                        "pixel_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "nurture_sequence_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "lead_form": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "intro_title": {
+                              "type": "string"
+                            },
+                            "intro_body": {
+                              "type": "string"
+                            },
+                            "intro_image_url": {
+                              "type": "string"
+                            },
+                            "privacy_policy_url": {
+                              "type": "string"
+                            },
+                            "privacy_link_text": {
+                              "type": "string"
+                            },
+                            "thank_you_title": {
+                              "type": "string"
+                            },
+                            "thank_you_body": {
+                              "type": "string"
+                            },
+                            "thank_you_button_text": {
+                              "type": "string"
+                            },
+                            "thank_you_url": {
+                              "type": "string"
+                            },
+                            "questions": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": true
+                              }
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "ad_account_id": {
+                          "description": "Observed null; non-null type not established."
+                        },
+                        "keywords_exact": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "keywords_phrase": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "negative_keywords": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "metrics": {
+                          "type": "object",
+                          "properties": {
+                            "impressions": {
+                              "type": "integer"
+                            },
+                            "clicks": {
+                              "type": "integer"
+                            },
+                            "conversions": {
+                              "type": "integer"
+                            },
+                            "spend": {
+                              "type": "integer"
+                            },
+                            "cpc": {
+                              "type": "integer"
+                            },
+                            "ctr": {
+                              "type": "integer"
+                            },
+                            "roas": {
+                              "type": "integer"
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "ad_copy_details": {
+                          "type": "object",
+                          "properties": {
+                            "primary_text": {
+                              "type": "string"
+                            },
+                            "headline": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "cta": {
+                              "type": "string"
+                            },
+                            "primary_texts": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "headlines": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "descriptions": {
+                              "type": "array",
+                              "items": {}
+                            }
+                          },
+                          "additionalProperties": true
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  ],
+                  "description": "Observed create and full-update representations differ, including ad_copy object versus string."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Observed after controlled draft deletion"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specifically authorized campaign object",
+        "description": "Only a self-created local QA draft was tested. Do not generalize cleanup to existing client assets or provider cancellation.",
+        "x-evidence-level": "tested local QA draft cleanup",
+        "parameters": [
+          {
+            "name": "campaign_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed deletion response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "App email/password login",
+        "description": "UI login succeeded; client code posts email/password and reads token/user. No token value is included in this documentation.",
+        "security": [],
+        "x-evidence-level": "UI tested, shape source observed",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string",
+                    "writeOnly": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token and user consumed by the browser client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

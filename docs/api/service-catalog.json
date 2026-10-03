@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-08",
+  "catalog": [
+    {
+      "industry": "Roofing & Exteriors",
+      "services": [
+        "Roof Replacement",
+        "Roof Repair",
+        "Storm Damage Restoration",
+        "Gutter Installation",
+        "Siding"
+      ]
+    },
+    {
+      "industry": "Med Spa & Aesthetics",
+      "services": [
+        "Botox & Fillers",
+        "Laser Hair Removal",
+        "Body Contouring",
+        "Facials & Skin Care",
+        "IV Therapy"
+      ]
+    },
+    {
+      "industry": "B2B & Professional Services",
+      "services": [
+        "Managed IT Services",
+        "Consulting",
+        "Accounting & Bookkeeping",
+        "Recruiting",
+        "Software / SaaS"
+      ]
+    },
+    {
+      "industry": "E-commerce & Retail",
+      "services": [
+        "Online Store Growth",
+        "Product Launch",
+        "Subscription Box",
+        "Local Retail Traffic"
+      ]
+    },
+    {
+      "industry": "Home Services",
+      "services": [
+        "HVAC",
+        "Plumbing",
+        "Electrical",
+        "Landscaping",
+        "Kitchen & Bath Remodel",
+        "House Cleaning"
+      ]
+    },
+    {
+      "industry": "Health & Wellness",
+      "services": [
+        "Dental Implants & Cosmetic",
+        "Chiropractic",
+        "Physical Therapy",
+        "Gym Memberships",
+        "Personal Training"
+      ]
+    },
+    {
+      "industry": "Legal & Financial",
+      "services": [
+        "Personal Injury Law",
+        "Family Law",
+        "Estate Planning",
+        "Mortgage & Lending",
+        "Insurance"
+      ]
+    },
+    {
+      "industry": "Real Estate",
+      "services": [
+        "Home Buyer Leads",
+        "Seller Listings",
+        "Property Management",
+        "New Development"
+      ]
+    },
+    {
+      "industry": "Automotive",
+      "services": [
+        "Auto Repair",
+        "Detailing & Ceramic Coating",
+        "Car Sales",
+        "Window Tint & Wraps"
+      ]
+    }
+  ]
+}

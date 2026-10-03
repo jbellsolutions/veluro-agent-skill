@@ -1,0 +1,64 @@
+# Veluro operating knowledge base
+
+> Independent platform operating reference based on the September 8, 2026 review. Includes all 42 feature runbooks, instructions for agents using the UI or API, and explicitly labeled verification gaps.
+
+## Start here
+
+- [Operating manual](MANUAL.md)
+- [Agent instructions](AGENT_INSTRUCTIONS.md)
+- [Verification register](VERIFICATION.md)
+- [Maintenance](MAINTENANCE.md)
+- [API guide](api/API_GUIDE.md)
+- [Observed OpenAPI subset](api/observed-openapi.json)
+- [Complete discovered API call catalog](api/endpoint-catalog.json)
+- [Combined Markdown reference](llms-full.txt)
+- [Download the full documentation](downloads/veluro-documentation.zip)
+
+## Feature runbooks
+
+- [Home and AI operator](runbooks/home.md)
+- [Profile, settings and notifications](runbooks/settings.md)
+- [Provider and CRM integrations](runbooks/integrations.md)
+- [Plans, quotas and billing](runbooks/billing.md)
+- [Brand Kit](runbooks/brand.md)
+- [Veluro Intelligence and business knowledge](runbooks/knowledge.md)
+- [Growth Engine](runbooks/growth.md)
+- [Ad campaigns and optimization](runbooks/campaigns.md)
+- [High-Intent Buyers and advanced search](runbooks/intent.md)
+- [Pixels and conversion tracking](runbooks/pixels.md)
+- [Sales funnels and funnel editor](runbooks/funnels.md)
+- [Landing pages and A/B tests](runbooks/landing.md)
+- [Demand Map and surge alerts](runbooks/demand.md)
+- [SEO audit and rank tracking](runbooks/seo.md)
+- [SEO Blog Engine](runbooks/blog.md)
+- [GEO and AI visibility](runbooks/geo.md)
+- [Local Listings](runbooks/local.md)
+- [Leads CRM and imports](runbooks/leads.md)
+- [Nurture Campaigns](runbooks/nurture.md)
+- [Replies Inbox](runbooks/inbox.md)
+- [Email Triage and connected inbox](runbooks/email.md)
+- [AI Reply Drafter](runbooks/reply.md)
+- [LinkedIn prospecting, Compose and queue](runbooks/linkedin.md)
+- [CSV email campaigns and sender setup](runbooks/outreach.md)
+- [Scheduling and calendar](runbooks/scheduling.md)
+- [Proposals and signatures](runbooks/proposals.md)
+- [AI Sales Coach](runbooks/coach.md)
+- [Website chat widgets](runbooks/widgets.md)
+- [Social Media Manager and autopilot](runbooks/social.md)
+- [Creative Studio](runbooks/creative.md)
+- [Storyboard Video Builder](runbooks/storyboard.md)
+- [Creative Library and asset editing](runbooks/library.md)
+- [Creative Insights](runbooks/insights.md)
+- [Flyers and PDF output](runbooks/flyers.md)
+- [Dashboard, analytics and reports](runbooks/dashboard.md)
+- [Business Health and reputation](runbooks/health.md)
+- [Competitor Tracking](runbooks/competitors.md)
+- [Weekly Digest](runbooks/digest.md)
+- [Client workspace team and roles](runbooks/team.md)
+- [Partner dashboard, resellers and payouts](runbooks/partner.md)
+- [Marketing Library and Starter Kit](runbooks/marketing.md)
+- [Help, guides and support](runbooks/help.md)
+
+## Operating boundary
+
+Preserve Tested / UI observed / Source observed / Vendor described / Unverified labels. A route in the source-discovered catalog is not a vendor contract. Verify identity, scope, quotas and delivery readiness before acting. Do not claim that this hosting publication places these sources automatically into ChatGPT project context. Raw account evidence and the supplied transcript are held in the owner's private here.now Drive.

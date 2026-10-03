@@ -1,0 +1,60 @@
+{
+  "platform": "meta",
+  "page_id": null,
+  "ad_account_id": null,
+  "campaign_name": "Documentation example — draft only",
+  "campaign_type": "leads",
+  "lead_method": "lead_form",
+  "destination_url": null,
+  "audience": {
+    "mode": "ai",
+    "selected": [],
+    "names": [],
+    "geo_locations": [],
+    "region": ""
+  },
+  "budget_monthly": 30,
+  "budget_daily": 1,
+  "optimization_rules": {
+    "auto": false
+  },
+  "auto_optimize": false,
+  "ad_copy": "",
+  "ad_copy_details": {
+    "primary_text": "",
+    "headline": "",
+    "description": "",
+    "cta": "LEARN_MORE",
+    "primary_texts": [],
+    "headlines": [],
+    "descriptions": []
+  },
+  "creative_assets": [],
+  "creative_urls": [],
+  "pixel_id": null,
+  "nurture_sequence_id": null,
+  "keywords_exact": [],
+  "keywords_phrase": [],
+  "negative_keywords": [],
+  "lead_form": {
+    "name": "Documentation example — draft only — Lead Form",
+    "intro_title": "",
+    "intro_body": "",
+    "intro_image_url": "",
+    "privacy_policy_url": "",
+    "privacy_link_text": "",
+    "thank_you_title": "",
+    "thank_you_body": "",
+    "thank_you_button_text": "",
+    "thank_you_url": "",
+    "questions": [
+      {
+        "type": "FULL_NAME"
+      },
+      {
+        "type": "EMAIL"
+      }
+    ]
+  },
+  "status": "draft"
+}

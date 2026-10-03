@@ -1,0 +1,682 @@
+[
+  {
+    "id": "home",
+    "title": "Home and AI operator",
+    "route": "/home",
+    "when": "Use for planning, explaining the account and initiating a clearly scoped task.",
+    "prerequisites": "Verified client identity and approved business facts.",
+    "steps": [
+      "Open Home and inspect the current next-action suggestion.",
+      "Use a new chat for a distinct job or reopen the relevant chat history.",
+      "Describe the desired output, client, audience, facts, constraints and whether the result should remain a draft.",
+      "Review the proposed action and any attached assets; distinguish explanation from an executable action.",
+      "Check resulting objects in their owning module and record their IDs."
+    ],
+    "success": "The requested artifact exists and its actual state matches the request.",
+    "limitations": "Chat and recommendation output is fallible; do not let a chat instruction silently authorize spending or delivery."
+  },
+  {
+    "id": "settings",
+    "title": "Profile, settings and notifications",
+    "route": "/settings",
+    "when": "Use during onboarding, contact changes and preference maintenance.",
+    "prerequisites": "Correct workspace, approved identity/contact facts and permission to change settings.",
+    "steps": [
+      "Open Settings → Profile; distinguish login email from public contact email.",
+      "Fill approved name, business and contact fields and save the profile.",
+      "Review agent memory against business facts; amend only relevant entries.",
+      "Open Notifications and set only approved push, reply, demand, win-rate and optimization preferences.",
+      "Read back changed values and confirm no unintended preference changed."
+    ],
+    "success": "Saved values survive reload; client-facing materials use the correct public details.",
+    "limitations": "Language selection may save immediately. Reset memory deletes learned context. Auto-Optimize is an operating permission, not just an email preference."
+  },
+  {
+    "id": "integrations",
+    "title": "Provider and CRM integrations",
+    "route": "/settings?tab=integrations",
+    "when": "Use before any channel-specific launch, sync, reporting or delivery.",
+    "prerequisites": "Authorized provider credentials/account access; intended account, page, property, calendar and scope.",
+    "steps": [
+      "Read approval and verification banners before choosing a connection.",
+      "Choose the exact integration; follow its OAuth or credential form using the authorized client account.",
+      "Verify returned connection state and selected provider IDs.",
+      "For CRM, specify sync direction and map fields; test a controlled authorized record before bulk sync.",
+      "Check expiry/reconnect behavior and keep secrets outside business knowledge and reports."
+    ],
+    "success": "The required operation works with the intended account; a connected label alone is insufficient.",
+    "limitations": "Connections may authorize external access. The current account has no ad or delivery integrations; Meta review gating remains."
+  },
+  {
+    "id": "billing",
+    "title": "Plans, quotas and billing",
+    "route": "/settings?tab=billing",
+    "when": "Use before batching work or evaluating service capacity.",
+    "prerequisites": "Read-only account access; separate explicit authority for financial changes.",
+    "steps": [
+      "Read plan level and billing status separately.",
+      "Check AI credits, Studio usage, intent quota, active campaigns, landing pages, social pages and coaching caps.",
+      "Store each reset date; do not combine unlike meters.",
+      "Estimate planned usage against the relevant allowance and approved spending ceiling.",
+      "Preserve drafts on exhaustion; use a top-up or plan switch only if authorized."
+    ],
+    "success": "The resource plan fits current entitlements and authorized costs.",
+    "limitations": "Checkout, top-up, cancel, resume and plan-switch operations have financial effects. Partner and customer pricing differ."
+  },
+  {
+    "id": "brand",
+    "title": "Brand Kit",
+    "route": "/settings?tab=brand-kit",
+    "when": "Use before generating visual assets or after an approved rebrand.",
+    "prerequisites": "Approved logo, colors, font and style direction.",
+    "steps": [
+      "Open Brand Kit; select the approved logo from the asset library.",
+      "Set primary, secondary and accent/background colors.",
+      "Select the brand font and describe visual style, desired subjects and exclusions.",
+      "Save Brand Kit, reload and confirm the values.",
+      "Check the next generated asset actually follows the brand."
+    ],
+    "success": "Saved brand settings and inspected output match the approved identity.",
+    "limitations": "Applying a brand does not verify facts or rights in generated assets."
+  },
+  {
+    "id": "knowledge",
+    "title": "Veluro Intelligence and business knowledge",
+    "route": "/teach-veluro",
+    "when": "Use to prepare or update the AI knowledge used across features.",
+    "prerequisites": "Approved business references and correct isolated account.",
+    "steps": [
+      "Add the main website and specific useful pages.",
+      "Upload appropriate supported files within the 30 MB UI limit.",
+      "Add structured notes using company, competitor, persona, FAQ, pricing or goal categories.",
+      "Inspect knowledge entries and resolve conflicting facts or stale offers.",
+      "Ask a bounded factual question and compare the answer with the reference before depending on it."
+    ],
+    "success": "Knowledge entries exist and output accurately reflects the approved source.",
+    "limitations": "Do not upload passwords, unrelated personal information or another client’s knowledge. Removing an entry changes future AI context."
+  },
+  {
+    "id": "growth",
+    "title": "Growth Engine",
+    "route": "/service-brain",
+    "when": "Use to assemble an integrated campaign package around a service and market.",
+    "prerequisites": "Approved industry/service, offer, market, goal, business knowledge, quotas and delivery plan.",
+    "steps": [
+      "Choose New Growth Engine and select or describe the industry.",
+      "Choose the service or services; multiple selections can create multiple engines.",
+      "Set market, goal and notes; complete business training inputs.",
+      "Create once and record every returned engine ID; poll existing engines rather than restart.",
+      "Inspect ads, landing content, outreach, booking and scoring; edit each component.",
+      "Before launch, inspect generate-images and publish-landing choices, account routing and authorization."
+    ],
+    "success": "Each component has the expected content and state; live components are independently checked.",
+    "limitations": "Creation can consume AI resources; launch can publish a page and create media. Live launch was not tested."
+  },
+  {
+    "id": "campaigns",
+    "title": "Ad campaigns and optimization",
+    "route": "/campaigns",
+    "when": "Use to prepare, manage and optimize approved advertising.",
+    "prerequisites": "Complete client record, provider readiness, approved budget/optimization limits and verified conversion path.",
+    "steps": [
+      "Open New Campaign; use guided setup or the manual builder.",
+      "Choose platform, objective, name, lead method and destination.",
+      "Configure audience or Google keywords and explicit geography.",
+      "Set monthly budget and authorized optimization settings; inspect derived daily budget.",
+      "Review creative assets, copy variants, forms/privacy, tracking and nurture.",
+      "Save a local draft and read it back; choose paused provider creation or live launch only within authorization.",
+      "Poll the existing campaign/job and verify provider IDs, state and delivery before reporting success."
+    ],
+    "success": "Draft read-back or provider state matches the chosen action; spend and conversion events match the client.",
+    "limitations": "Local drafts are Tested. Live launch, pause, reallocation and autonomous optimization are not production-certified. Scores and simulations are not actual outcomes."
+  },
+  {
+    "id": "intent",
+    "title": "High-Intent Buyers and advanced search",
+    "route": "/intent",
+    "when": "Use to discover/filter potential buyers and prepare an activation audience.",
+    "prerequisites": "Approved audience, intended use, geography, topic meaning and lead allowance.",
+    "steps": [
+      "Choose Business buyers, Consumers or filter-only Advanced search.",
+      "For intent, search at least three characters and pick up to five relevant topic IDs; avoid irrelevant named-company matches.",
+      "Apply recency, state/city/ZIP and appropriate B2B or B2C filters.",
+      "Name the tracker and review its allocation before building; the observed default is large.",
+      "Record audience ID and poll until complete; inspect counts, sample quality and applied filters.",
+      "Export or activate only the intended audience, verifying provider match, CRM mapping and delivery authorization."
+    ],
+    "success": "The returned list matches intended filters and its source/quality are understood.",
+    "limitations": "No audience generation/export or match-rate test was run. Deletion releases quota next cycle. Advanced search is not intent evidence."
+  },
+  {
+    "id": "pixels",
+    "title": "Pixels and conversion tracking",
+    "route": "/pixels",
+    "when": "Use before measuring or optimizing campaign conversion events.",
+    "prerequisites": "Authorized site/funnel access and correct provider tag/pixel ID.",
+    "steps": [
+      "Open Add Pixel and choose Meta, Google, LinkedIn, TikTok or Custom Script.",
+      "Enter the actual provider identifier/script and a descriptive name.",
+      "Generate and inspect install code; assign it only to the intended page/funnel.",
+      "Install through the authorized site flow and trigger a controlled test conversion.",
+      "Verify the event in the provider and ensure events are not double-fired."
+    ],
+    "success": "Actual provider event receipt and intended page placement are verified.",
+    "limitations": "Creating a Veluro pixel record is not proof of installation. Custom scripts execute on client pages."
+  },
+  {
+    "id": "funnels",
+    "title": "Sales funnels and funnel editor",
+    "route": "/funnels",
+    "when": "Use for a multi-step conversion, booking or sales flow.",
+    "prerequisites": "Approved offer, audience, CTA, brand, tracking and any payment/automation authorization.",
+    "steps": [
+      "Create Funnel and choose AI or template.",
+      "For AI, specify goal, product/offer, audience, market, desired outcome and style.",
+      "Record the funnel ID and wait for generation; inspect each page and step.",
+      "Edit content, forms, step order and upsell/downsell paths; verify navigation and conversion mapping.",
+      "Configure only approved pixels, automations, payment connection and webhooks.",
+      "Preview responsive output; publish only on the approved destination; verify actual submissions."
+    ],
+    "success": "The served flow, routing, forms and authorized downstream actions work end to end.",
+    "limitations": "Template creation can create stored objects. Automation test buttons can send real messages. Payment, publishing and variant promotion were not executed."
+  },
+  {
+    "id": "landing",
+    "title": "Landing pages and A/B tests",
+    "route": "/landing-pages",
+    "when": "Use for a single conversion-focused page and controlled variants.",
+    "prerequisites": "Approved business description, CTA, branding, domain, privacy and page allowance.",
+    "steps": [
+      "Supply business name, detailed offer and CTA goal.",
+      "Optionally extract design from an inspiration URL; review design use and write original client copy.",
+      "Choose look/feel and generate once; preserve page ID.",
+      "Edit sections, images, form and CTA; preview desktop/mobile output.",
+      "Publish to the approved slug/domain and verify domain status and served content.",
+      "For A/B tests, record variant IDs, metric and evaluation window before promoting a winner."
+    ],
+    "success": "The actual page and conversion destination work, and variant decisions use real data.",
+    "limitations": "Generation, saving, publishing, domain verification and autopilot are separate operations. Page creation is quota-limited."
+  },
+  {
+    "id": "demand",
+    "title": "Demand Map and surge alerts",
+    "route": "/demand-map",
+    "when": "Use for market research and geographically focused campaign planning.",
+    "prerequisites": "Approved operating geography, service categories and an interpretable source of demand.",
+    "steps": [
+      "Enter a specific city/state/region; remove irrelevant default categories.",
+      "Optionally select the intended saved audience.",
+      "Generate the map once and inspect location, segments, estimated volumes and assumptions.",
+      "Drill into a hotspot before creating a campaign; verify target geography in the campaign itself.",
+      "Enable email surge alerts only under the client’s notification preference."
+    ],
+    "success": "Map interpretation and resulting campaign geography are reviewed and recorded.",
+    "limitations": "Estimated demand is not a census. The source request supplies descriptive audience context; exact person-level targeting is unverified."
+  },
+  {
+    "id": "seo",
+    "title": "SEO audit and rank tracking",
+    "route": "/seo",
+    "when": "Use to diagnose site issues and track approved keywords.",
+    "prerequisites": "Correct website, site editing authority and relevant keywords/competitors.",
+    "steps": [
+      "Run a site audit against the intended URL.",
+      "Inspect findings and proposed fixes; verify issues on the actual pages.",
+      "Set keywords, competitor and scan preferences deliberately.",
+      "Apply approved changes in the website system and rerun relevant checks.",
+      "Compare rank history using the same terms, location and time window."
+    ],
+    "success": "Actual site changes and tracked observations support the reported improvement.",
+    "limitations": "An audit score or generated fix is not proof of ranking improvement. Repeated scans may consume resources."
+  },
+  {
+    "id": "blog",
+    "title": "SEO Blog Engine",
+    "route": "/blog",
+    "when": "Use for source-backed organic content and an approved business blog.",
+    "prerequisites": "Approved topic, sources, brand voice and publishing destination.",
+    "steps": [
+      "Choose a primary topic/keyword or request topic suggestions.",
+      "Generate one article and record the post ID.",
+      "Review claims, links, metadata, FAQ schema and quotations; edit to match client evidence.",
+      "Preview and publish only the approved version to the intended blog.",
+      "Verify served URL and content; use unpublish when an authorized rollback is needed."
+    ],
+    "success": "The published article is accurate, correctly branded and reachable at the expected URL.",
+    "limitations": "AI readiness and SEO scores are heuristics. Publishing and unpublishing are external actions."
+  },
+  {
+    "id": "geo",
+    "title": "GEO and AI visibility",
+    "route": "/geo",
+    "when": "Use for testing brand visibility in AI answers and preparing structured content.",
+    "prerequisites": "Correct brand, website, competitors and representative buyer prompts.",
+    "steps": [
+      "Set brand/website/competitors and review the generated buyer prompts.",
+      "Run the scan and poll its ID to completion.",
+      "Inspect the tested prompts, returned answers and scoring rather than rely only on a score.",
+      "Run the site audit; generate llms.txt or FAQ JSON-LD as drafts.",
+      "Review facts and schema; deploy only through approved site access, then verify served content."
+    ],
+    "success": "The report clearly distinguishes observed answers from predicted future visibility.",
+    "limitations": "GEO settings can save during editing. Files and scores do not guarantee mentions or ranking."
+  },
+  {
+    "id": "local",
+    "title": "Local Listings",
+    "route": "/local-listings",
+    "when": "Use to check availability of the planned Google Business Profile feature.",
+    "prerequisites": "Current feature availability.",
+    "steps": [
+      "Open Local Listings and inspect its state.",
+      "If it still says Coming Soon, record unavailable and continue other work.",
+      "When released, verify actual GBP connection, location selection and approved edit/review-reply workflows before use."
+    ],
+    "success": "Availability is reported accurately.",
+    "limitations": "Coming Soon in the inspected account. Do not claim listing management or review response works here."
+  },
+  {
+    "id": "leads",
+    "title": "Leads CRM and imports",
+    "route": "/leads",
+    "when": "Use to maintain the authorized client pipeline and route follow-up.",
+    "prerequisites": "Approved source data, contact permissions, deduplication rules and CRM field mapping.",
+    "steps": [
+      "Inspect table/pipeline, status/campaign/score filters and grouping.",
+      "Add a lead with email or phone, or import the authorized CSV through the file chooser.",
+      "Validate field mapping, imported/skipped counts and duplicate handling.",
+      "Review lead score and status using actual contact history.",
+      "Enroll only eligible contacts into the approved sequence; verify delivery logs and synchronization."
+    ],
+    "success": "The intended records and counts match source data without unintended enrollment or duplicates.",
+    "limitations": "Import and sync mutate the CRM. Custom-status read returned 404 in this account; validate before relying on custom stages."
+  },
+  {
+    "id": "nurture",
+    "title": "Nurture Campaigns",
+    "route": "/nurture",
+    "when": "Use for approved follow-up to eligible leads.",
+    "prerequisites": "Reviewed sequence, eligible enrolled leads, sender route, Twilio for SMS and stop/suppression rules.",
+    "steps": [
+      "Inspect campaign statuses and enrolled leads.",
+      "Review each step’s channel, delay, subject and body.",
+      "Confirm email and SMS delivery connections separately.",
+      "Activate/send only under the approved outreach scope.",
+      "Inspect delivery, replies and failures; stop or suppress leads according to the client rules."
+    ],
+    "success": "Actual delivery and enrollment states match the approved sequence.",
+    "limitations": "The visible activation API is activate-send. Emails/SMS can remain queued without the corresponding connection."
+  },
+  {
+    "id": "inbox",
+    "title": "Replies Inbox",
+    "route": "/inbox",
+    "when": "Use to triage responses to the client’s campaigns.",
+    "prerequisites": "Correct client inbox and response authorization.",
+    "steps": [
+      "Read the relevant replies and originating lead/campaign.",
+      "Identify intent, requested action, opt-out or delivery issue.",
+      "Update the lead and stop/suppress further follow-up where appropriate.",
+      "Prepare a contextual response and send only if the engagement authorizes it.",
+      "Verify reply/delivery state and record the next step."
+    ],
+    "success": "The reply is handled with accurate context and no conflicting automated follow-up.",
+    "limitations": "Opening a reply may mark it read. Reply generation and sending are different effects."
+  },
+  {
+    "id": "email",
+    "title": "Email Triage and connected inbox",
+    "route": "/email",
+    "when": "Use for authorized inbox management and reply preparation.",
+    "prerequisites": "The intended email account is connected and in scope.",
+    "steps": [
+      "Connect the specific mailbox through the supported account flow.",
+      "Inspect only the requested folders/messages.",
+      "Run triage when authorized and review classifications and proposed drafts.",
+      "Approve or send the correct response within engagement scope.",
+      "Verify message state; distinguish star, archive, delete and send actions."
+    ],
+    "success": "The intended email is handled and its resulting state is checked.",
+    "limitations": "The inspected account had no email connection. This is separate from cold outreach sender setup."
+  },
+  {
+    "id": "reply",
+    "title": "AI Reply Drafter",
+    "route": "/reply-drafter",
+    "when": "Use to prepare a response from provided email text.",
+    "prerequisites": "Relevant email, accurate business context and desired outcome.",
+    "steps": [
+      "Paste the email into the drafter.",
+      "Choose the intended outcome and provide needed context.",
+      "Generate, review and refine for factual accuracy and tone.",
+      "Copy the result into the authorized sending surface or preserve as a draft.",
+      "Check history only within the correct client account."
+    ],
+    "success": "A usable reviewed draft is produced; delivery is claimed only if separately verified.",
+    "limitations": "Do not treat reassuring privacy copy in the UI as a verified server retention guarantee."
+  },
+  {
+    "id": "linkedin",
+    "title": "LinkedIn prospecting, Compose and queue",
+    "route": "/linkedin",
+    "when": "Use for B2B prospect records, manually sent copy and reminder sequences.",
+    "prerequisites": "Approved prospect context and intended LinkedIn workflow.",
+    "steps": [
+      "Add the prospect with accurate name/company/profile.",
+      "Choose Compose and provide role, industry, hook and relevant context.",
+      "Generate connection request, InMail, follow-up or reply copy.",
+      "Review and preserve copy; the built-in Compose feature does not send it.",
+      "Save a sequence to the Outreach Queue when appropriate; mark sent only after actual authorized sending elsewhere."
+    ],
+    "success": "Prospect records, copy and reminders reflect actual work and message history.",
+    "limitations": "Marketing API connection, identity login and Compose are different capabilities. Do not automate DM delivery by inference."
+  },
+  {
+    "id": "outreach",
+    "title": "CSV email campaigns and sender setup",
+    "route": "/outreach",
+    "when": "Use for approved list-based email programs.",
+    "prerequisites": "Authorized list, verified sender setup, suppression, send window and provider cost allowance.",
+    "steps": [
+      "Configure the intended mailbox or Resend sender and verify connection/route.",
+      "Import the CSV and validate list count/mapping and suppression.",
+      "Create campaign with purpose, value proposition, tone, sequence length and CTA.",
+      "Inspect all messages and sender routing; set launch timing deliberately.",
+      "Launch only within approved audience/sending scope; monitor delivery, replies, bounces and opt-outs.",
+      "Pause and reconcile before retrying any ambiguous send operation."
+    ],
+    "success": "Correct recipients receive the intended messages and suppression/reply behavior is verified.",
+    "limitations": "Current Lists/Campaigns tabs were gated by absent senders. Source exposes mailbox warmup and test-send actions, which can send real messages."
+  },
+  {
+    "id": "scheduling",
+    "title": "Scheduling and calendar",
+    "route": "/scheduling",
+    "when": "Use to offer slots, book meetings and maintain authorized calendars.",
+    "prerequisites": "Correct calendar, timezone, availability, contact and invitation authorization.",
+    "steps": [
+      "Select the intended day and inspect available slots.",
+      "Set title, time, duration, contact and notes.",
+      "Check conflicts and the calendar integration before confirming.",
+      "Create the appointment only within invitation scope.",
+      "Verify the actual calendar event, booking state and public reschedule/cancel path when used."
+    ],
+    "success": "The right people have the correct event in the intended timezone and calendar.",
+    "limitations": "Scheduling may send invites or sync externally. No connected calendar workflow was tested."
+  },
+  {
+    "id": "proposals",
+    "title": "Proposals and signatures",
+    "route": "/proposals",
+    "when": "Use to prepare and deliver approved commercial proposals.",
+    "prerequisites": "Accurate client identity/email, authorized prices/terms and signing process.",
+    "steps": [
+      "Open New Proposal or an approved template.",
+      "Fill client, company, validity date, title, introduction, sections and line items.",
+      "Review totals, notes, scope and AI-drafted language against approved terms.",
+      "Save and inspect PDF output.",
+      "Send for Signature only after final scope authorization; verify the intended recipient and signature state."
+    ],
+    "success": "The saved/exported proposal is correct; signing events are supported by the audit record.",
+    "limitations": "AI Draft, Save, PDF and Send for Signature are distinct. Do not invent signature, agreement or pricing."
+  },
+  {
+    "id": "coach",
+    "title": "AI Sales Coach",
+    "route": "/sales-coach",
+    "when": "Use before, during and after authorized sales calls.",
+    "prerequisites": "Approved playbook, accurate prospect context, available seat/call/minute quota and recording process.",
+    "steps": [
+      "Select the appropriate playbook and prepare prospect/company/pain/goal/objections.",
+      "Generate prep and check that advice fits the offer.",
+      "For Live, arm only when the agreed recording process permits; verify microphone capture.",
+      "For Review, paste transcript or upload authorized audio and inspect analysis.",
+      "Review drafted follow-up before any send; reconcile usage and maintain session history."
+    ],
+    "success": "Useful coaching is grounded in the actual call, and usage/session records are verified.",
+    "limitations": "UI exposes 10 analyses / 300 minutes in this plan, plus one seat. Live microphone capture and analysis were not run."
+  },
+  {
+    "id": "widgets",
+    "title": "Website chat widgets",
+    "route": "/chat-widgets",
+    "when": "Use to answer website questions and capture eligible leads.",
+    "prerequisites": "Approved bot identity, business knowledge, privacy process, embed access and CRM routing.",
+    "steps": [
+      "Create a widget with name, welcome, color, goal and tone.",
+      "Supply business/services/FAQ and optional website/files.",
+      "Inspect knowledge ingestion; test common questions and unsafe/unknown cases in simulation.",
+      "Review appearance, lead fields and booking destination.",
+      "Embed only on the approved site, then verify real capture and CRM routing."
+    ],
+    "success": "The actual embedded widget answers accurately and records leads in the correct account.",
+    "limitations": "Simulation may use AI credits. Widget creation, toggle, duplicate and embed are separate actions."
+  },
+  {
+    "id": "social",
+    "title": "Social Media Manager and autopilot",
+    "route": "/social",
+    "when": "Use to prepare and publish an approved social content calendar.",
+    "prerequisites": "Correct profiles/pages, brand assets, approved content and schedule/timezone.",
+    "steps": [
+      "Check each platform connection and current approval gates.",
+      "Create a manual post or generate a strategy/batch for review.",
+      "Inspect text, links, hashtags and finished image/video for each platform.",
+      "Save drafts or approve/schedule within the agreed publishing scope.",
+      "Verify provider publication and calendar state; reconcile before retrying failures.",
+      "Configure autopilot only with explicit content, frequency and spending limits."
+    ],
+    "success": "Posts appear on the intended profile at the intended time with correct content.",
+    "limitations": "Dragging a post can reschedule it. Autopilot can create and publish content; general Meta approval remains gated."
+  },
+  {
+    "id": "creative",
+    "title": "Creative Studio",
+    "route": "/creative-studio",
+    "when": "Use to generate image/video assets or assemble creative variants.",
+    "prerequisites": "Approved creative brief, asset rights, exact model variant, credit allowance and output specs.",
+    "steps": [
+      "Choose Guided or Pro mode and the intended output type.",
+      "Read current model slug, price, ratio/duration and reference-image requirements.",
+      "Write the brief and inspect added text/branding fields.",
+      "Generate once and store the job/generation ID; poll rather than resubmit.",
+      "Review finished output and saved library asset, then check credit delta.",
+      "Use Photos → Video, Ad Lab or storyboard only for the matching need and inspect their separate final actions."
+    ],
+    "success": "The finished asset meets specification, exists in the library and has a verified cost/result.",
+    "limitations": "Model names can repeat with different costs. Avatar/audio labels do not establish available models. Generation was not executed."
+  },
+  {
+    "id": "storyboard",
+    "title": "Storyboard Video Builder",
+    "route": "/studio/storyboard",
+    "when": "Use for a multi-scene video assembled from a script.",
+    "prerequisites": "Approved script, duration, aspect ratio, scene plan and credit ceiling.",
+    "steps": [
+      "Supply the script/brief and select 15/30/45/60 seconds and ratio.",
+      "Build the storyboard; preserve project and scene IDs.",
+      "Review script and each scene before generation.",
+      "Generate required clips, poll their existing IDs and check each result.",
+      "Stitch only complete approved clips; inspect final video/audio and library output."
+    ],
+    "success": "The final stitched video matches the approved scene order and technical specification.",
+    "limitations": "Generating scenes and stitching are distinct jobs; partial completion must not trigger duplicate generation."
+  },
+  {
+    "id": "library",
+    "title": "Creative Library and asset editing",
+    "route": "/studio",
+    "when": "Use to organize, upload, reuse and edit approved assets.",
+    "prerequisites": "Correct client assets, rights and intended output.",
+    "steps": [
+      "Filter Social, Ads, AI Creatives or Media Library.",
+      "Import image/video only when needed; record asset IDs and folder.",
+      "Open the appropriate image/video editor and preserve an original.",
+      "Apply approved edits, resizing, background removal or video changes; poll render jobs.",
+      "Inspect exported media and use the correct asset ID in campaigns/posts."
+    ],
+    "success": "The intended asset and edited/exported version are identifiable and usable.",
+    "limitations": "Delete, AI edit, folder assignment and launch-as-ads have different effects. Do not infer that a thumbnail is a finished render."
+  },
+  {
+    "id": "insights",
+    "title": "Creative Insights",
+    "route": "/creative-insights",
+    "when": "Use to analyze actual ad creative performance.",
+    "prerequisites": "Connected correct Meta account and reliable date-window metrics.",
+    "steps": [
+      "Connect the intended account and select the date range.",
+      "Inspect ad-level results and underlying provider metrics.",
+      "Ask a bounded analytical question tied to the selected ads.",
+      "Compare suggested tests with the actual winning/losing evidence.",
+      "Prepare revised assets as drafts; execute budget or live creative changes only within authority."
+    ],
+    "success": "Recommendations can be traced to the actual ads and reporting window.",
+    "limitations": "The current account is gated by absent Meta connection. Fatigue and AI scores do not replace observed results."
+  },
+  {
+    "id": "flyers",
+    "title": "Flyers and PDF output",
+    "route": "/flyers",
+    "when": "Use for an approved printable promotional artifact.",
+    "prerequisites": "Approved business/offer/contact details, branding and image rights.",
+    "steps": [
+      "Fill name, headline, subheadline, offer, CTA, phone, website and QR URL.",
+      "Choose a design and approved image; review AI-generated copy if used.",
+      "Save the flyer and inspect the preview.",
+      "Download PDF and verify text fit, page layout and QR/phone/link accuracy.",
+      "Preserve the final approved PDF with the client record."
+    ],
+    "success": "The printable artifact is accurate, readable and has working destinations.",
+    "limitations": "Save and generation differ from PDF export. Do not use unverified performance claims in the offer."
+  },
+  {
+    "id": "dashboard",
+    "title": "Dashboard, analytics and reports",
+    "route": "/dashboard",
+    "when": "Use to review actual operations and produce evidence-backed reporting.",
+    "prerequisites": "Correct data sources, dates, timezone, attribution and currency.",
+    "steps": [
+      "Choose Overview, Analytics, Command Center or Reports.",
+      "Read empty/disconnected states explicitly and verify underlying sources.",
+      "Inspect consistent date windows before comparing metrics.",
+      "Generate insights/report only when its inputs are understood.",
+      "Review numbers, forecasts and recommendations; export/share only the verified report."
+    ],
+    "success": "Reported results reconcile to source events and the stated window.",
+    "limitations": "A Live label, chart, generated insight or PDF is not proof of real underlying business activity."
+  },
+  {
+    "id": "health",
+    "title": "Business Health and reputation",
+    "route": "/health",
+    "when": "Use only after verifying the origins of the business and financial data.",
+    "prerequisites": "Reconciled source metrics; approved action scope.",
+    "steps": [
+      "Inspect health components and their underlying details.",
+      "Check connected sources and reconcile revenue, spend, conversion, retention and reputation against them.",
+      "Flag unexplained/sample figures and exclude them from client decisions.",
+      "Review any recommendation with its actual evidence and expected effect.",
+      "Execute an action only after provenance and authorization are established; read back actual outcomes."
+    ],
+    "success": "Scores and proposed actions have demonstrated data lineage.",
+    "limitations": "Current account has a material provenance conflict. Do not use its populated metrics to trigger spending, financial actions or messaging."
+  },
+  {
+    "id": "competitors",
+    "title": "Competitor Tracking",
+    "route": "/competitors",
+    "when": "Use to track relevant public competitor activity and inform approved tests.",
+    "prerequisites": "Correct competitors, official sites and a defined comparison question.",
+    "steps": [
+      "Add a competitor or review AI suggestions.",
+      "Verify company name and website before saving.",
+      "Run analysis and inspect cited/current evidence.",
+      "Separate observation from inference and unsupported positioning claims.",
+      "Use findings to prepare an approved test and record source date."
+    ],
+    "success": "Competitive claims are supported by the right company/source and date.",
+    "limitations": "Analysis can be incomplete or stale. Do not copy unsupported statistics into outreach."
+  },
+  {
+    "id": "digest",
+    "title": "Weekly Digest",
+    "route": "/digest",
+    "when": "Use for a reviewed weekly operating summary.",
+    "prerequisites": "Verified data and a defined reporting period; permission for email delivery if used.",
+    "steps": [
+      "Read an existing digest or generate the first.",
+      "Compare figures with source records and annotate missing data.",
+      "Review optimization recommendations against approved goals.",
+      "Preserve the reviewed digest and next actions.",
+      "Send via Email only if delivery is authorized; verify intended recipient and delivery result."
+    ],
+    "success": "The summary is accurate and delivered only through the intended channel.",
+    "limitations": "Generate and Send via Email are separate operations; no digest email was sent."
+  },
+  {
+    "id": "team",
+    "title": "Client workspace team and roles",
+    "route": "/team",
+    "when": "Use to provision or audit operator access in the client application.",
+    "prerequisites": "Owner/admin scope and approved person/role.",
+    "steps": [
+      "Read the actual role matrix and current member list.",
+      "Choose Owner/Admin/Member according to the required tasks.",
+      "Prepare the specific invite or role change; verify the exact email/person.",
+      "Send or save only when member-management authorization covers it.",
+      "Verify membership status and that only intended permissions changed."
+    ],
+    "success": "The right operator has the required access in the correct client workspace.",
+    "limitations": "Member cannot run AI agents in the displayed matrix. Only Owner can manage billing/settings. Invites send external messages."
+  },
+  {
+    "id": "partner",
+    "title": "Partner dashboard, resellers and payouts",
+    "route": "/partner",
+    "when": "Use for referral tracking, recruitment attribution and partner staff operations.",
+    "prerequisites": "Correct partner account, referral code and agreement.",
+    "steps": [
+      "Use Overview for referred customers and settled/pending commissions.",
+      "Use My Team for recruited resellers and Team Members for staff; do not conflate them.",
+      "Use the appropriate main, trial or reseller invite link and preserve tracking.",
+      "Use the calculator with 20% direct, 10% reseller subscription and 5% reseller-client revenue bases.",
+      "Inspect payout/clearing records; verify actual payout separately from projected commission.",
+      "Prepare staff/income/link changes deliberately and perform them only within scope."
+    ],
+    "success": "Attribution, commission base, staff relationship and actual payout states are accurately recorded.",
+    "limitations": "Payout/bank changes and invitations require the appropriate authority. No recruitment message or payout action was performed."
+  },
+  {
+    "id": "marketing",
+    "title": "Marketing Library and Starter Kit",
+    "route": "/marketing-materials",
+    "when": "Use to prepare Veluro promotional materials with the correct referral attribution.",
+    "prerequisites": "Approved offer, actual commission terms and permission for any publication/advertising.",
+    "steps": [
+      "Choose the Veluro asset group and inspect the material’s intended channel.",
+      "Check the referral URL and any per-asset attribution parameters.",
+      "Adapt text and fact-check statistics, trial claims and feature promises.",
+      "Download/copy a reviewed asset or prepare a campaign draft.",
+      "Launch/share only within the approved promotional scope and inspect performance attribution."
+    ],
+    "success": "The material contains accurate claims and the correct tracked link; actual publishing is independently verified.",
+    "limitations": "Prebuilt launch buttons can create ads. Investment-related asset groups were outside this Veluro documentation scope."
+  },
+  {
+    "id": "help",
+    "title": "Help, guides and support",
+    "route": "/help",
+    "when": "Use to learn setup or resolve a discrepancy.",
+    "prerequisites": "Current live UI and dated evidence.",
+    "steps": [
+      "Search Help or choose its category.",
+      "Open the relevant guide and compare labels/limits with the live page.",
+      "Follow verified current controls rather than stale illustrations.",
+      "Record any discrepancy in the verification register and continue independent work.",
+      "Prepare a precise support question with sanitized evidence if needed; do not send without messaging authority."
+    ],
+    "success": "Instructions match the current usable interface and unresolved gaps are explicit.",
+    "limitations": "The built-in guides have some stale labels and topic limits; vendor descriptions are not execution proof."
+  }
+]
